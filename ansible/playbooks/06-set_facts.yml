@@ -1,0 +1,14 @@
+- name: Show set_facts
+  hosts: all
+  tasks:
+    - name: Run some command
+      shell: uname
+      register: OUT
+
+    - name: Define output to saperate variable
+      set_fact:
+        OUTPUT : "{{OUT.stdout}}"
+
+    - name: Print OUTPUT
+      debug:
+        msg: "Output = {{OUTPUT}}"

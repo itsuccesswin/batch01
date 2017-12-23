@@ -1,0 +1,7 @@
+node1 NAME=RAGHU
+
+#[DEV]
+#10.142.0.8 NAME=RAHIM
+
+#[DEV:vars]
+#NAME=RAJU

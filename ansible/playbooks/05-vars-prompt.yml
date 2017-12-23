@@ -1,0 +1,9 @@
+- name: show vars_prompt
+  hosts: all
+  vars_prompt:
+    - name: "NAME"
+      prompt: "what is your name?"
+      private: no
+  tasks:
+    - debug:
+        msg: "Hello , {{NAME}}"

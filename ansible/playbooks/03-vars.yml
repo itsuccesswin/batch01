@@ -1,0 +1,7 @@
+- name: Show vars
+  hosts: all
+  vars:
+    NAME: RAGHU
+  tasks:
+    - debug:
+        msg: "Hello , {{NAME}}"

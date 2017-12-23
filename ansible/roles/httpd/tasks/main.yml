@@ -1,0 +1,19 @@
+- name: Install httpd
+  yum: 
+    name: httpd
+    state: installed
+  notify: Restart httpd
+
+- name: Print Name
+  debug:
+        msg: "Hello, {{NAME}}"
+
+- name: Copy index
+  copy:
+     src: index.html
+     dest: /var/www/html/index.html
+- name: copy template
+  template:
+        src: hostname.html.j2
+        dest: /var/www/html/hostname.html
+

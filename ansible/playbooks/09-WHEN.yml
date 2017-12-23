@@ -1,0 +1,19 @@
+- name: Install httpd server
+  hosts: all
+  become: yes
+  tasks:
+    - yum:
+        name: httpd
+        state: installed
+      register: out
+
+    - shell: ls
+
+    - name: Restart HTTPD        
+      service:
+        name: httpd
+        state: restarted
+      when: out.changed == true
+
+    - shell: ls
+

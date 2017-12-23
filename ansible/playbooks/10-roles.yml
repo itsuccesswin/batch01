@@ -1,0 +1,5 @@
+- name: call roles
+  hosts: all
+  become: yes
+  roles:
+    - httpd 

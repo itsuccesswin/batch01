@@ -1,0 +1,18 @@
+- name: Install httpd server
+  hosts: all
+  become: yes
+  tasks:
+    - yum:
+        name: httpd
+        state: installed
+      notify: Restart HTTPD
+
+    - shell: ls
+
+    - shell: ls
+
+  handlers:
+    - name: Restart HTTPD        
+      service:
+        name: httpd
+        state: restarted

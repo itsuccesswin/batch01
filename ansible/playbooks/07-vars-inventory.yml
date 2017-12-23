@@ -1,0 +1,5 @@
+- name: Show ansibble inventory variables
+  hosts: DEV
+  tasks:
+    - debug:
+        msg: "Hello, {{NAME}}"

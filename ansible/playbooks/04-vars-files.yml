@@ -1,0 +1,7 @@
+- name: Showing vars_files
+  hosts: all
+  vars_files:
+    - var01.yml
+  tasks:
+    - debug:
+        msg: "Hello , {{NAME}}"
